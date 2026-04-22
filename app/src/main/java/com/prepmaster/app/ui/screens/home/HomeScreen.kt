@@ -218,7 +218,7 @@ fun StatCard(value:String, label:String, icon: ImageVector, color:Color, modifie
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun QuickCard(title:String, icon: ImageVector, color:Color, modifier:Modifier, onClick:()->Unit) {
-    Card(modifier, colors=CardDefaults.cardColors(BgCard), shape=RoundedCornerShape(14.dp), onClick=onClick) {
+    Card(modifier=modifier, colors=CardDefaults.cardColors(BgCard), shape=RoundedCornerShape(14.dp), onClick=onClick) {
         Row(Modifier.padding(14.dp), verticalAlignment=Alignment.CenterVertically) {
             Box(Modifier.size(34.dp).background(color.copy(0.18f),RoundedCornerShape(8.dp)),
                 contentAlignment=Alignment.Center) {

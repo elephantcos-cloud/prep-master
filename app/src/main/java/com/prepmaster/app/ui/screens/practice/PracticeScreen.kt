@@ -67,7 +67,7 @@ fun PracticeScreen(vm: AppViewModel = viewModel()) {
         Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)) {
 
             // Sentence with blank highlighted
-            Card(Modifier.fillMaxWidth(), colors=CardDefaults.cardColors(BgCard), shape=RoundedCornerShape(18.dp)) {
+            Card(modifier=Modifier.fillMaxWidth(), colors=CardDefaults.cardColors(BgCard), shape=RoundedCornerShape(18.dp)) {
                 Column(Modifier.padding(20.dp)) {
                     Text("শূন্যস্থান পূরণ করো:", style=MaterialTheme.typography.labelLarge, color=TxtHint)
                     Spacer(Modifier.height(12.dp))
@@ -119,7 +119,7 @@ fun PracticeScreen(vm: AppViewModel = viewModel()) {
                             isOpt && !isCorrect -> Coral
                             else -> Color.Transparent
                         }
-                        Card(Modifier.weight(1f).height(52.dp).border(1.5.dp,border,RoundedCornerShape(14.dp)),
+                        Card(modifier=Modifier.weight(1f).height(52.dp).border(1.5.dp,border,RoundedCornerShape(14.dp)),
                             colors=CardDefaults.cardColors(bg), shape=RoundedCornerShape(14.dp),
                             onClick={if(!showRes) selected=idx}) {
                             Box(Modifier.fillMaxSize(), contentAlignment=Alignment.Center) {
@@ -135,7 +135,7 @@ fun PracticeScreen(vm: AppViewModel = viewModel()) {
 
             // Explanation
             AnimatedVisibility(visible=showRes) {
-                Card(Modifier.fillMaxWidth(),
+                Card(modifier=Modifier.fillMaxWidth(),
                     colors=CardDefaults.cardColors(if(isCorrect)Mint.copy(0.08f) else Coral.copy(0.08f)),
                     shape=RoundedCornerShape(14.dp),
                     border=BorderStroke(1.dp,if(isCorrect)Mint.copy(0.3f) else Coral.copy(0.3f))) {

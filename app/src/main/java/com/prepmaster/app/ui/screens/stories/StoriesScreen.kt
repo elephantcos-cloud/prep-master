@@ -45,7 +45,7 @@ fun StoriesScreen(vm: AppViewModel = viewModel()) {
 
         Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)) {
             stories.forEachIndexed { idx, story ->
-                Card(Modifier.fillMaxWidth().padding(vertical=8.dp),
+                Card(modifier=Modifier.fillMaxWidth().padding(vertical=8.dp),
                     colors=CardDefaults.cardColors(BgCard), shape=RoundedCornerShape(18.dp),
                     onClick={selectedStory=story}) {
                     Column(Modifier.padding(20.dp)) {
@@ -112,7 +112,7 @@ fun StoryReadScreen(story: com.prepmaster.app.data.model.StoryItem, onBack: () -
         Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
             if(!showQuiz) {
                 // Story text with highlighted prepositions
-                Card(Modifier.fillMaxWidth().padding(16.dp),
+                Card(modifier=Modifier.fillMaxWidth().padding(16.dp),
                     colors=CardDefaults.cardColors(BgCard), shape=RoundedCornerShape(18.dp)) {
                     Column(Modifier.padding(20.dp)) {
                         Row(verticalAlignment=Alignment.CenterVertically) {
@@ -144,7 +144,7 @@ fun StoryReadScreen(story: com.prepmaster.app.data.model.StoryItem, onBack: () -
                 }
 
                 // Prepositions used
-                Card(Modifier.fillMaxWidth().padding(horizontal=16.dp),
+                Card(modifier=Modifier.fillMaxWidth().padding(horizontal=16.dp),
                     colors=CardDefaults.cardColors(BgCard2), shape=RoundedCornerShape(16.dp)) {
                     Column(Modifier.padding(16.dp)) {
                         Text("গল্পে ব্যবহৃত Prepositions:", style=MaterialTheme.typography.titleMedium, color=Cyan)
@@ -202,7 +202,7 @@ fun StoryReadScreen(story: com.prepmaster.app.data.model.StoryItem, onBack: () -
                         Text("প্রশ্ন ${qIdx+1}/${story.questions.size}",
                             style=MaterialTheme.typography.labelLarge, color=Cyan)
                         Spacer(Modifier.height(12.dp))
-                        Card(Modifier.fillMaxWidth(), colors=CardDefaults.cardColors(BgCard), shape=RoundedCornerShape(16.dp)) {
+                        Card(modifier=Modifier.fillMaxWidth(), colors=CardDefaults.cardColors(BgCard), shape=RoundedCornerShape(16.dp)) {
                             Text(q.question, Modifier.padding(16.dp), style=MaterialTheme.typography.headlineSmall)
                         }
                         Spacer(Modifier.height(14.dp))
@@ -211,7 +211,7 @@ fun StoryReadScreen(story: com.prepmaster.app.data.model.StoryItem, onBack: () -
                             val isSel = selOpt==idx2
                             val bg = when{!showAns->if(isSel)Cyan.copy(0.18f) else BgCard; isAns->Mint.copy(0.18f); isSel&&!isAns->Coral.copy(0.18f); else->BgCard}
                             val bd = when{!showAns->if(isSel)Cyan else Color.Transparent; isAns->Mint; isSel&&!isAns->Coral; else->Color.Transparent}
-                            Card(Modifier.fillMaxWidth().padding(vertical=4.dp).border(1.5.dp,bd,RoundedCornerShape(12.dp)),
+                            Card(modifier=Modifier.fillMaxWidth().padding(vertical=4.dp).border(1.5.dp,bd,RoundedCornerShape(12.dp)),
                                 colors=CardDefaults.cardColors(bg), shape=RoundedCornerShape(12.dp),
                                 onClick={if(!showAns) selOpt=idx2}) {
                                 Text(opt, Modifier.padding(14.dp), style=MaterialTheme.typography.bodyMedium)
