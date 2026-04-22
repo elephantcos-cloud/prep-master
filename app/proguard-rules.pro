@@ -1,0 +1,1 @@
+-keep class com.prepmaster.app.data.** { *; }

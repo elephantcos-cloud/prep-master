@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <!-- P letter with preposition arrows -->
+    <path android:fillColor="#7C5CFC"
+        android:pathData="M54,18 L82,36 L82,72 L54,90 L26,72 L26,36 Z"/>
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M42,35 L42,73 L48,73 L48,58 L58,58 C64,58 70,53 70,46 C70,39 64,35 58,35 Z"/>
+    <path android:fillColor="#7C5CFC"
+        android:pathData="M48,41 L57,41 C61,41 64,43 64,46 C64,49 61,52 57,52 L48,52 Z"/>
+    <!-- Arrow ornament -->
+    <path android:fillColor="#00C6FF"
+        android:pathData="M72,75 L85,75 L80,70 M85,75 L80,80"/>
+</vector>
